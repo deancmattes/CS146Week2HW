@@ -19,4 +19,8 @@ public class Stack {
     public void pop(){
         list.removeFirst();
     }
+
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
 }
