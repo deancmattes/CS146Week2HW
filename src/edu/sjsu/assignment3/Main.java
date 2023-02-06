@@ -6,18 +6,26 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println(convertToPostfix("a*b/(c-d)"));
+        System.out.println(convertToPostfix("(a-b*c)/(d*e*f+g)"));
+        System.out.println(convertToPostfix("a/b*(c+(d-e))"));
     }
 
     public static int priorityOf(char c){
-        int priority = 0;
+        int priority = -1;
         switch (c)
         {
             case '^' :
                 priority = 3;
+                break;
             case '*' : case '/' :
                 priority = 2;
+                break;
             case '+' : case '-' :
                 priority = 1;
+                break;
+            case '(' :
+                priority = 0;
+                break;
         }
         return priority;
     }
